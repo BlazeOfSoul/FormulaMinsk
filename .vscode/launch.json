@@ -1,0 +1,42 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Development: FormulaMinsk.Api",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build FormulaMinsk.Api",
+            "program": "${workspaceFolder}/server/bin/Debug/net8.0/FormulaMinsk.API.dll",
+            "args": [],
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development",
+                "ASPNETCORE_URLS": "http://localhost:5000"
+            },
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(http?://\\S+)",
+                "uriFormat": "%s/swagger"
+            },
+            "cwd": "${workspaceFolder}/server/",
+            "stopAtEntry": false,
+            "console": "internalConsole",
+            "brokeredServicePipeName": "undefined"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Development: FormulaMinsk.UI",
+            "preLaunchTask": "ng serve",
+            "postDebugTask": "terminate running task",
+            "url": "http://localhost:4200/",
+            "webRoot": "${workspaceFolder}/client"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Development: Server/Client",
+            "configurations": ["Development: FormulaMinsk.Api", "Development: FormulaMinsk.UI"],
+            "stopAll": true
+        }
+    ]
+}
