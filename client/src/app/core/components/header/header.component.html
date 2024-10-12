@@ -35,6 +35,19 @@
                 ></path>
             </g>
         </svg>
-        <p class="text-2xl font-bold">Formula1 Minsk</p>
+        <p class="text-2xl font-bold cursor-pointer" (click)="goHome()">Formula1 Minsk</p>
+
+        <p-menubar [model]="items" class="ml-8">
+            <ng-template pTemplate="item" let-item>
+                <a
+                    pRipple
+                    class="flex align-items-center p-menuitem-link"
+                    (click)="navigateTo(item.routerLink)"
+                >
+                    <span [class]="item.icon"></span>
+                    <span class="ml-2">{{ item.label }}</span>
+                </a>
+            </ng-template>
+        </p-menubar>
     </ng-template>
 </p-toolbar>
