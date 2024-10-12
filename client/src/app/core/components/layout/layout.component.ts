@@ -9,8 +9,5 @@ import { HeaderComponent } from '../header/header.component';
     imports: [HeaderComponent, FooterComponent, RouterOutlet],
     templateUrl: './layout.component.html',
     styleUrl: './layout.component.scss',
-    host: {
-        class: 'flex flex-column min-h-full max-h-full',
-    },
 })
 export class LayoutComponent {}

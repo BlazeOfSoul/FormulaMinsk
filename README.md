@@ -1,1 +1,1 @@
-# FormulaMinsk
+# Formula1Minsk
