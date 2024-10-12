@@ -1,7 +1,7 @@
 :host {
     width: 100%;
     background-color: var(--background-color);
-    height: 34px;
+    height: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -12,4 +12,17 @@
 
 :host p {
     margin: 0;
+}
+
+.flex .pi {
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.flex .pi:hover {
+    color: var(--primary-color);
+}
+
+.icon-link {
+    color: inherit;
 }
